@@ -1,18 +1,29 @@
-import entidades.Cliente;
-import entidades.Proveedor;
-import entidades.Usuario;
+import traslados.Chofer;
+import traslados.RegistroChoferes;
+import traslados.Vehiculo;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
+import java.util.ArrayList;
 
-    Proveedor proveedor1= new Proveedor("Juan","1234567890","pastelería");
+public class Main {
 
-    Integer num1= Integer.valueOf("123");
 
-    Usuario cliente1= new Cliente("Flor","123");
-    IO.println(cliente1.getNombre());
+    static void main() {
+
+        //registrar choferes idealmente -->  ingresarían los datos con scanner
+        RegistroChoferes registro= new RegistroChoferes();
+
+        Vehiculo auto1= new Vehiculo("203", "wer123","ford",
+                "aer123","400hp" );
+
+        Chofer chofer1= new Chofer("Juan", 123,auto1 );
+
+        registro.registrarChofer(chofer1);
+        IO.println(registro.getChoferes());
+
+        chofer1.agregarAuto(new Vehiculo("205", "yer123","ford",
+                "a123","450hp"));
+
+
+    }
 
 }
