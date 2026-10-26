@@ -1,6 +1,7 @@
 package traslados;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Chofer {
 
@@ -81,5 +82,33 @@ public class Chofer {
 
 
     }
+
+    @Override
+    public String toString() {
+        return "Chofer{" +
+                ", hashcode= " + this.hashCode()+
+                "nombre='" + nombre + '\'' +
+                ", N_REGISTRO=" + N_REGISTRO +
+                ", vehiculos=" + vehiculos +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if(o == null || o.getClass() != this.getClass()) return false;
+        Chofer choferIngresado= (Chofer)o;
+        return Objects.equals(this.nombre, choferIngresado.nombre) && this.N_REGISTRO == choferIngresado.N_REGISTRO;
+
+    }
+
+    @Override
+    public int hashCode() {
+//        int n=11;
+//        int hash= n*17 + this.nombre.hashCode();
+//        hash= hash *17 + this.N_REGISTRO;
+//        return hash;
+        return Objects.hash(this.nombre,this.N_REGISTRO);
+    }
+
 
 }
