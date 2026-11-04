@@ -19,6 +19,10 @@ public abstract class Instrumento implements Comparable <Instrumento> {
     public abstract void probarSonido();
 
 
+    public String getFamilia() {
+        return familia;
+    }
+
     @Override
     public String toString() {
         return "Instrumento{" +
@@ -38,8 +42,17 @@ public abstract class Instrumento implements Comparable <Instrumento> {
 
     }
 
-    @Override
-    public int compareTo(Instrumento o) {
-        return this.modelo.compareToIgnoreCase(o.modelo);
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
+
+   @Override
+   public int compareTo( Instrumento instrumento  ){
+
+     return  Integer.compare(this.codigo, instrumento.codigo); //this.modelo.compareToIgnoreCase(instrumento.modelo);
+
+    }
+
+
+
 }

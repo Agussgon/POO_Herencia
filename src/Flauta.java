@@ -15,5 +15,6 @@ public class Flauta extends Instrumento implements Afinable{
     @Override
     public void afinar() {
 
+            IO.println("afino "+ this.getClass());
     }
 }
